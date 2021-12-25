@@ -176,9 +176,10 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.getData()
+    this.getData() // when component mount it calls the getData function
   }
 
+  // fetching the states Data
   getData = async () => {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
@@ -196,6 +197,7 @@ class Home extends Component {
       let nationalWideDeceasedCases = 0
       let nationalWideActiveCases = 0
 
+      // we are adding individual state confirmed recovered and deceased cases to get the total country wide cases
       statesList.forEach(state => {
         if (responseData[state.state_code]) {
           const {total} = responseData[state.state_code]
@@ -244,7 +246,9 @@ class Home extends Component {
     }
   }
 
-  renderTotalOfStates = () => {
+  // rendering the total number of cases count
+
+  renderTotalCasesOfStates = () => {
     const {
       totalConfirmedCases,
       totalActiveCases,
@@ -252,7 +256,7 @@ class Home extends Component {
       totalDeceasedCases,
     } = this.state
     return (
-      <div className="total_container" testid="countryWideConfirmedCases">
+      <div className="total_container">
         <StatesTotal
           totalConfirmedCases={totalConfirmedCases}
           totalActiveCases={totalActiveCases}
@@ -262,6 +266,8 @@ class Home extends Component {
       </div>
     )
   }
+
+  // this function calls when ever we search on the search bar
 
   searchStarted = event => {
     const searchItem = event.target.value
@@ -275,9 +281,10 @@ class Home extends Component {
     })
   }
 
+  // search results container
   showSearchList = () => {
     const {filteredSearchList} = this.state
-
+    console.log(filteredSearchList)
     return (
       <ul
         className="search-result-container"
@@ -288,7 +295,6 @@ class Home extends Component {
             key={each.state_code}
             stateName={each.state_name}
             stateCode={each.state_code}
-            id={each.state_code}
           />
         ))}
       </ul>
@@ -321,6 +327,7 @@ class Home extends Component {
 
   whenAscendingSortButtonClicked = () => {
     const {statesArray} = this.state
+    console.log(statesArray)
     const sortedList = statesArray.sort((a, b) => {
       const x = a.stateName.toUpperCase()
       const y = b.stateName.toUpperCase()
@@ -350,9 +357,9 @@ class Home extends Component {
 
     return (
       <div className="states_container" testid="stateWiseCovidDataTable">
-        <ul className="states_headings">
-          <li className="state_name">
-            <h1 className="heading">Sates/UT</h1>
+        <div className="states_headings">
+          <div className="state_name">
+            <h1 className="heading">States/UT</h1>
             <button
               className="ordering_button"
               type="button"
@@ -370,25 +377,25 @@ class Home extends Component {
             >
               <FcGenericSortingDesc className="icons" />
             </button>
-          </li>
+          </div>
 
-          <li className="headings_container">
+          <div className="headings_container">
             <p className="heading">Confirmed</p>
-          </li>
+          </div>
 
-          <li className="headings_container">
+          <div className="headings_container">
             <p className="heading">Active</p>
-          </li>
-          <li className="headings_container">
+          </div>
+          <div className="headings_container">
             <p className="heading">Recovered</p>
-          </li>
-          <li className="headings_container">
+          </div>
+          <div className="headings_container">
             <p className="heading">Deceased</p>
-          </li>
-          <li className="headings_container">
+          </div>
+          <div className="headings_container">
             <p className="heading">Population</p>
-          </li>
-        </ul>
+          </div>
+        </div>
         <hr className="horizantal-line" />
         <ul className="statewisecovid-19-data">
           {statesArray.map(item => (
@@ -427,7 +434,7 @@ class Home extends Component {
       <div className="home-bg">
         <Header />
         {this.renderSearch()}
-        {this.renderTotalOfStates()}
+        {this.renderTotalCasesOfStates()}
         {this.renderStatesContainer()}
         <Footer />
       </div>
