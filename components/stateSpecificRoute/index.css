@@ -1,0 +1,110 @@
+.state-wise-bg {
+  background-color: #161625;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.state-name-and-count-container {
+  width: 80vw;
+  align-self: center;
+  display: flex;
+
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.state-name-container {
+  padding: 10px;
+  background-color: #0284c7;
+  background-size: cover;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.state-name {
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  color: #0ea5e9;
+}
+
+.total-count {
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #94a3b8;
+  text-align: end;
+}
+
+.count {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #94a3b8;
+  text-align: end;
+}
+
+.state-name-and-lastupdated {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.last-updated {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #cbd5e1;
+
+  text-align: start;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Top-districts-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  align-self: center;
+}
+
+.top-districts {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  color: #ff073a;
+}
+
+.each-district-data {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.charts {
+  align-self: center;
+}
+
+.render-all {
+  display: flex;
+  flex-direction: column;
+}
