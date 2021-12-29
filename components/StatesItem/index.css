@@ -1,0 +1,57 @@
+.states_headings {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.state_name {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.heading {
+  color: white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.headings_container {
+  text-align: center;
+  width: 100px;
+}
+
+.heading {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.confirmed {
+  color: #ff073a;
+}
+
+.active {
+  color: #007bff;
+}
+
+.recovered {
+  color: #28a745;
+}
+
+.deceased {
+  color: #6c757d;
+}
+
+.population {
+  color: #94a3b8;
+}
+
+.link {
+  text-decoration: none;
+}
